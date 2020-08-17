@@ -81,20 +81,22 @@ class Car:
     total_discard = -1
     
     corpus = []
-    def __init__(self, path = '', price_outlier_mt = 200000, mileage_outlier_mt = 400000,
-                year_outlier_lt = 1995, engine_outlier_mt = 4000, engine_outlier_lt = 750,
+    def __init__(self, path = '',
+                 #redundant
+                 #price_outlier_mt = 200000, mileage_outlier_mt = 400000,
+                #year_outlier_lt = 1995, engine_outlier_mt = 4000, engine_outlier_lt = 750,
                 dependent_variable = 'price',
                 categorical_variables = ['engine_type', 'city', 'province'],
                 numeric_variables = ['price', 'mileage_km', 'engine_cm3', 'year'],
                 read_from_path = 'yes', pandas_dataframe = '_NULL_'):
         
         #define outliers values
-        self.price_outlier_mt = price_outlier_mt
-        self.mileage_outlier_mt = mileage_outlier_mt
-        self.year_outlier_lt =  year_outlier_lt
-        self.engine_outlier_mt = engine_outlier_mt
-        self.engine_outlier_lt = engine_outlier_lt
-        self.dependent_variable = dependent_variable       
+        #self.price_outlier_mt = price_outlier_mt
+        #self.mileage_outlier_mt = mileage_outlier_mt
+        #self.year_outlier_lt =  year_outlier_lt
+        #self.engine_outlier_mt = engine_outlier_mt
+        #self.engine_outlier_lt = engine_outlier_lt
+        #self.dependent_variable = dependent_variable       
 
         
         
