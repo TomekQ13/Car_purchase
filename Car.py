@@ -209,7 +209,7 @@ class Car:
         self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.replace('*',' ')) 
         self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.replace('*',' '))
         
-        #NLP preprocessing for location
+        #NLP - remove polish letters
         self.data['province'] = self.data['province'].apply(lambda x: x.lower()) 
         self.data['province'] = self.data['province'].apply(lambda x: x.replace('ą', 'a')) 
         self.data['province'] = self.data['province'].apply(lambda x: x.replace('ę', 'e'))
@@ -217,6 +217,25 @@ class Car:
         self.data['province'] = self.data['province'].apply(lambda x: x.replace('ś', 's'))
         self.data['province'] = self.data['province'].apply(lambda x: x.replace('ć', 'c'))
         self.data['province'] = self.data['province'].apply(lambda x: x.replace('ż', 'z'))
+        self.data['province'] = self.data['province'].apply(lambda x: x.replace('ź', 'z'))
+        
+        self.data['city'] = self.data['city'].apply(lambda x: x.lower()) 
+        self.data['city'] = self.data['city'].apply(lambda x: x.replace('ą', 'a')) 
+        self.data['city'] = self.data['city'].apply(lambda x: x.replace('ę', 'e'))
+        self.data['city'] = self.data['city'].apply(lambda x: x.replace('ł', 'l'))
+        self.data['city'] = self.data['city'].apply(lambda x: x.replace('ś', 's'))
+        self.data['city'] = self.data['city'].apply(lambda x: x.replace('ć', 'c'))
+        self.data['city'] = self.data['city'].apply(lambda x: x.replace('ż', 'z'))
+        self.data['city'] = self.data['city'].apply(lambda x: x.replace('ź', 'z'))
+        
+        self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.lower()) 
+        self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.replace('ą', 'a')) 
+        self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.replace('ę', 'e'))
+        self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.replace('ł', 'l'))
+        self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.replace('ś', 's'))
+        self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.replace('ć', 'c'))
+        self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.replace('ż', 'z'))
+        self.data['concat_title_subtitle'] = self.data['concat_title_subtitle'].apply(lambda x: x.replace('ź', 'z'))
         
     def describe(self):
         #descriptive statistice
