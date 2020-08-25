@@ -240,13 +240,13 @@ class Car:
     def describe(self):
         #descriptive statistice
         desc_stats = round(pd.DataFrame(
-                        data = self.data[self.numerical_variables].describe(),
-                        columns = self.data[self.numerical_variables].columns),2)
+                        data = self.data[self.numeric_variables].describe(),
+                        columns = self.data[self.numeric_variables].columns),2)
         return desc_stats
     
     def remove_outliers(self, variable, value, mode):
         if variable not in self.numeric_variables:
-            print('Specify a numerical variable')
+            print('Specify a numeric variable')
             return
         
         if mode not in ['more_than', 'less_than']:
